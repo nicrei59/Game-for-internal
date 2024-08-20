@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://ch4xqh1i0rkr1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kja85"]
+
+[node name="Enemy" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
+sprite_frames = SubResource("SpriteFrames_kja85")
+
+[node name="Area2D" type="Area2D" parent="CollisionShape2D/AnimatedSprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D/AnimatedSprite2D/Area2D"]
