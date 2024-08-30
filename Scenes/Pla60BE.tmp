@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://pwvo8ldil2vv"]
+
+[ext_resource type="Script" path="res://Scenes/player.gd" id="1_lkk68"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rxl1b"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_lkk68")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_rxl1b")
