@@ -1,7 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://pwvo8ldil2vv"]
+[gd_scene load_steps=9 format=3 uid="uid://pwvo8ldil2vv"]
 
 [ext_resource type="Script" path="res://Scenes/player.gd" id="1_lkk68"]
 [ext_resource type="Texture2D" uid="uid://duvmtanuvwul" path="res://spritesheet_58-removebg-preview.png" id="2_q4k4h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bq31o"]
+size = Vector2(97, 125)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_70qgw"]
 atlas = ExtResource("2_q4k4h")
@@ -40,12 +43,15 @@ animations = [{
 }]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_lkk68")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.5, -9.5)
+shape = SubResource("RectangleShape2D_bq31o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(128.75, -77.125)
+position = Vector2(3, -12)
 scale = Vector2(1.90086, 1.97472)
 sprite_frames = SubResource("SpriteFrames_rxl1b")
 frame = 1

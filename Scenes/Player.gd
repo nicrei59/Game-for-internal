@@ -1,22 +1,15 @@
 extends CharacterBody2D
 
-var speed = 200
-var velocity = Vector2.ZERO()
 
+@export var SPEED = 200.0
+@export var ACCELERATION = 20.0
+@export var FRICTION = 10.0
 
 func _physics_process(delta):
-	velocity = Vector2.ZERO()
+	var  direction=Input.get_vector("Left","Right","Up","Down") 
+	if direction:
+		velocity=velocity.move_toward(direction*SPEED, ACCELERATION)
+	else:
+		velocity=velocity.move_toward(Vector2.ZERO,FRICTION)
+	move_and_slide()
 	
-	if Input.is_action_just_pressed("Down"):
-		velocity.y += speed
-	if Input.is_action_just_pressed("Up"):
-		velocity.y -= speed
-	if Input.is_action_just_pressed("Left"):
-		velocity.x -= speed 
-	if Input.is_action_just_pressed("Right"):
-		velocity.x += speed
-	
-	move_and_slide(velocity)
-	look_at(get_global_mouse_position())
-
-  
