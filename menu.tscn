@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://ntn63qpxm8fe"]
+[gd_scene load_steps=5 format=3 uid="uid://ntn63qpxm8fe"]
 
-[ext_resource type="Script" path="res://menu.gd" id="1_nibk5"]
 [ext_resource type="Texture2D" uid="uid://bf74kwxnidmwe" path="res://Mac.png" id="2_2f8h4"]
+[ext_resource type="Script" path="res://start_button.gd" id="3_iok36"]
+[ext_resource type="Script" path="res://options_button.gd" id="4_6g22r"]
+[ext_resource type="Script" path="res://quit_button.gd" id="5_c573t"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -10,7 +12,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_nibk5")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -44,13 +45,14 @@ grow_vertical = 2
 [node name="StartButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Start"
+script = ExtResource("3_iok36")
 
 [node name="OptionsButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Options"
+script = ExtResource("4_6g22r")
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Quit"
-
-[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+script = ExtResource("5_c573t")

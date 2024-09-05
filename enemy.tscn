@@ -4,11 +4,11 @@
 
 [node name="Enemy" type="CharacterBody2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D/CollisionShape2D"]
 sprite_frames = SubResource("SpriteFrames_kja85")
 
-[node name="Area2D" type="Area2D" parent="CollisionShape2D/AnimatedSprite2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D/AnimatedSprite2D/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

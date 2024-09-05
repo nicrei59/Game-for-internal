@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bjtxo17qxx783"]
+[gd_scene load_steps=3 format=3 uid="uid://bjtxo17qxx783"]
 
 [ext_resource type="PackedScene" uid="uid://pwvo8ldil2vv" path="res://Scenes/Player.tscn" id="1_fqo7n"]
-[ext_resource type="Texture2D" uid="uid://n18t4pjcp86m" path="res://background3.png" id="2_f8een"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3bob2"]
 size = Vector2(1135, 20)
@@ -17,7 +16,5 @@ shape = SubResource("RectangleShape2D_3bob2")
 [node name="Node2D" parent="." instance=ExtResource("1_fqo7n")]
 position = Vector2(290, 199)
 
-[node name="Background3" type="Sprite2D" parent="."]
-position = Vector2(527.5, 229)
-scale = Vector2(1.11354, 0.958333)
-texture = ExtResource("2_f8een")
+[node name="TileMap" type="TileMap" parent="Node2D"]
+format = 2
