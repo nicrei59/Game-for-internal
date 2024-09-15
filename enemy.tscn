@@ -1,14 +1,69 @@
-[gd_scene load_steps=2 format=3 uid="uid://ch4xqh1i0rkr1"]
+[gd_scene load_steps=10 format=3 uid="uid://ch4xqh1i0rkr1"]
+
+[ext_resource type="Texture2D" uid="uid://bbf1dmrb03t65" path="res://Bats-transformed-removebg-preview 2.0.png" id="1_2sdfe"]
+[ext_resource type="Script" path="res://enemy.gd" id="1_exm3n"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mhnnc"]
+radius = 32.0156
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a26jt"]
+atlas = ExtResource("1_2sdfe")
+region = Rect2(0, 201, 106, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cv80w"]
+atlas = ExtResource("1_2sdfe")
+region = Rect2(106, 201, 106, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2i4c6"]
+atlas = ExtResource("1_2sdfe")
+region = Rect2(212, 201, 106, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3yg3k"]
+atlas = ExtResource("1_2sdfe")
+region = Rect2(318, 201, 106, 67)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kja85"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a26jt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cv80w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2i4c6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3yg3k")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w4jj4"]
+radius = 28.2843
 
 [node name="Enemy" type="CharacterBody2D"]
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D/CollisionShape2D"]
-sprite_frames = SubResource("SpriteFrames_kja85")
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_exm3n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_mhnnc")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(-7, -8)
+scale = Vector2(1.23585, 1.35075)
+sprite_frames = SubResource("SpriteFrames_kja85")
+animation = &"new_animation"
+frame_progress = 0.144894
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("CircleShape2D_w4jj4")
+
+[node name="DamageTimer" type="Timer" parent="Hurtbox" groups=["Enemy"]]
