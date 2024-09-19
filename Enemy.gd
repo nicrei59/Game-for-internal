@@ -1,5 +1,5 @@
 extends CharacterBody2D
- 
+ # This is the enemys speed and movement speed to follow the player
 
 const SPEED = 300.0
 const JUMP_VELOCITY = 400.0

@@ -54,4 +54,9 @@ shape = SubResource("RectangleShape2D_bq31o")
 position = Vector2(2, -14)
 scale = Vector2(1.90086, 1.97472)
 sprite_frames = SubResource("SpriteFrames_rxl1b")
-frame_progress = 0.598137
+frame_progress = 0.310187
+
+[node name="KnifeTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="KnifeTimer" to="." method="_on_knife_timer_timeout"]
