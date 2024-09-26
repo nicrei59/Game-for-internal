@@ -10,7 +10,7 @@ func _physics_process(delta):
 	
 	var  direction=Input.get_vector("Left","Right","Up","Down") 
 	if direction:
-		velocity=velocity.move_toward(direction*SPEED, ACCELERATION)
+		velocity=velocity.move_toward(direction * SPEED, ACCELERATION)
 	else:
 		velocity=velocity.move_toward(Vector2.ZERO,FRICTION)
 		
@@ -21,4 +21,5 @@ func _physics_process(delta):
 func _on_knife_timer_timeout():
 	var knife = KNIFE .instantiate()
 	knife.global_position = global_position
+	knife.rotate(direction.angle())
 	world.add_child(knife)

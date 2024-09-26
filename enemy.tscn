@@ -58,7 +58,7 @@ position = Vector2(-7, -8)
 scale = Vector2(1.23585, 1.35075)
 sprite_frames = SubResource("SpriteFrames_kja85")
 animation = &"new_animation"
-frame_progress = 0.144894
+frame_progress = 0.792353
 
 [node name="Hurtbox" type="Area2D" parent="."]
 collision_layer = 0
