@@ -1,9 +1,27 @@
-[gd_scene load_steps=7 format=3 uid="uid://54k3oboywcqf"]
+[gd_scene load_steps=8 format=3 uid="uid://54k3oboywcqf"]
 
+[ext_resource type="Script" path="res://knife.gd" id="1_p7077"]
 [ext_resource type="Texture2D" uid="uid://bq2nojlgpjhww" path="res://images.png" id="1_tptbd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_14s1d"]
 radius = 108.0
+
+[sub_resource type="Animation" id="Animation_cvu3f"]
+resource_name = "Knife"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
 
 [sub_resource type="Animation" id="Animation_lwysw"]
 length = 0.001
@@ -49,23 +67,6 @@ tracks/0/keys = {
 "values": [0.0, 6.28319]
 }
 
-[sub_resource type="Animation" id="Animation_cvu3f"]
-resource_name = "Knife"
-length = 0.5
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 6.28319]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p8h5l"]
 _data = {
 "Knife": SubResource("Animation_cvu3f"),
@@ -74,6 +75,7 @@ _data = {
 }
 
 [node name="Knife" type="Area2D"]
+script = ExtResource("1_p7077")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_14s1d")

@@ -45,9 +45,6 @@ animations = [{
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_lkk68")
-SPEED = null
-ACCELERATION = null
-FRICTION = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2.5, -9.5)

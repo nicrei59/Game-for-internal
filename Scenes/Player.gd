@@ -5,7 +5,8 @@ extends CharacterBody2D
 @export var ACCELERATION = 20.0
 @export var FRICTION = 10.0
 const KNIFE = preload("res://knife.tscn")
-@onready var world = get_node('root/world')
+@onready var world = get_node("res://Scenes/World.tscn")
+@export var direction=Vector2.ZERO
 func _physics_process(delta):
 	
 	var  direction=Input.get_vector("Left","Right","Up","Down") 
